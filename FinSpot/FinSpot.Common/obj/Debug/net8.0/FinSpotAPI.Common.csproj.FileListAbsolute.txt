@@ -1,0 +1,11 @@
+C:\projects\FinSpot\FinSpot\FinSpot.Common\bin\Debug\net8.0\FinSpotAPI.Common.deps.json
+C:\projects\FinSpot\FinSpot\FinSpot.Common\bin\Debug\net8.0\FinSpotAPI.Common.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Common\bin\Debug\net8.0\FinSpotAPI.Common.pdb
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\FinSpotAPI.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\FinSpotAPI.Common.AssemblyInfoInputs.cache
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\FinSpotAPI.Common.AssemblyInfo.cs
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\FinSpotAPI.Common.csproj.CoreCompileInputs.cache
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\FinSpotAPI.Common.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\refint\FinSpotAPI.Common.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\FinSpotAPI.Common.pdb
+C:\projects\FinSpot\FinSpot\FinSpot.Common\obj\Debug\net8.0\ref\FinSpotAPI.Common.dll

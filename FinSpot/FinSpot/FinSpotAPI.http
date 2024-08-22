@@ -1,0 +1,6 @@
+@FinSpot_HostAddress = http://localhost:5101
+
+GET {{FinSpot_HostAddress}}/swagger/
+Accept: application/json
+
+###

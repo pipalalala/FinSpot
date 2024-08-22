@@ -1,0 +1,15 @@
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\bin\Debug\net8.0\FinSpotAPI.Domain.deps.json
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\bin\Debug\net8.0\FinSpotAPI.Domain.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\bin\Debug\net8.0\FinSpotAPI.Domain.pdb
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\bin\Debug\net8.0\FinSpotAPI.Common.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\bin\Debug\net8.0\FinSpotAPI.Common.pdb
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.csproj.AssemblyReference.cache
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.AssemblyInfoInputs.cache
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.AssemblyInfo.cs
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.csproj.CoreCompileInputs.cache
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotA.3EE624E3.Up2Date
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\refint\FinSpotAPI.Domain.dll
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\FinSpotAPI.Domain.pdb
+C:\projects\FinSpot\FinSpot\FinSpot.Domain\obj\Debug\net8.0\ref\FinSpotAPI.Domain.dll

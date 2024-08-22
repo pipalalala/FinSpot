@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mjmkpDEWXsKNNJi9egjqeDuJ/9HgtGDap5y5z3MYgcE=",
+  "Source": "FinSpotAPI.Web",
+  "BasePath": "_content/FinSpotAPI.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

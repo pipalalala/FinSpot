@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6n3aAyADEHU=",
+  "success": true,
+  "projectFilePath": "C:\\projects\\FinSpot\\FinSpot\\FinSpot.Infrastructure\\FinSpotAPI.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

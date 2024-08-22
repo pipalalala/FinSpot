@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\projects\\FinSpot\\FinSpot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8ACA2842-34CA-4FDF-B462-D5D0972AE287}|FinSpot\\FinSpotAPI.Web.csproj|c:\\projects\\finspot\\finspot\\finspot\\framework\\middlewares\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8ACA2842-34CA-4FDF-B462-D5D0972AE287}|FinSpot\\FinSpotAPI.Web.csproj|solutionrelative:finspot\\framework\\middlewares\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37143EA4-9C6C-44E2-A1BF-B006664F89D3}|FinSpot.Application\\FinSpotAPI.Application.csproj|c:\\projects\\finspot\\finspot\\finspot.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37143EA4-9C6C-44E2-A1BF-B006664F89D3}|FinSpot.Application\\FinSpotAPI.Application.csproj|solutionrelative:finspot.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A454D35-3FDA-499E-9010-265F38361044}|FinSpot.Common\\FinSpotAPI.Common.csproj|c:\\projects\\finspot\\finspot\\finspot.common\\exceptions\\baseapplicationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A454D35-3FDA-499E-9010-265F38361044}|FinSpot.Common\\FinSpotAPI.Common.csproj|solutionrelative:finspot.common\\exceptions\\baseapplicationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\projects\\FinSpot\\FinSpot\\FinSpot.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "FinSpot.Application\\Services\\UserService.cs",
+              "ToolTip": "C:\\projects\\FinSpot\\FinSpot\\FinSpot.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "FinSpot.Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T13:20:25.815Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseApplicationException.cs",
+              "DocumentMoniker": "C:\\projects\\FinSpot\\FinSpot\\FinSpot.Common\\Exceptions\\BaseApplicationException.cs",
+              "RelativeDocumentMoniker": "FinSpot.Common\\Exceptions\\BaseApplicationException.cs",
+              "ToolTip": "C:\\projects\\FinSpot\\FinSpot\\FinSpot.Common\\Exceptions\\BaseApplicationException.cs",
+              "RelativeToolTip": "FinSpot.Common\\Exceptions\\BaseApplicationException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T13:38:13.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ErrorHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\projects\\FinSpot\\FinSpot\\FinSpot\\Framework\\Middlewares\\ErrorHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "FinSpot\\Framework\\Middlewares\\ErrorHandlingMiddleware.cs",
+              "ToolTip": "C:\\projects\\FinSpot\\FinSpot\\FinSpot\\Framework\\Middlewares\\ErrorHandlingMiddleware.cs",
+              "RelativeToolTip": "FinSpot\\Framework\\Middlewares\\ErrorHandlingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T13:48:06.135Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

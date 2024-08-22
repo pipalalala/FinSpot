@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FinSpotAPI.Domain/1.0.0": {
+        "dependencies": {
+          "FinSpotAPI.Common": "1.0.0"
+        },
+        "runtime": {
+          "FinSpotAPI.Domain.dll": {}
+        }
+      },
+      "FinSpotAPI.Common/1.0.0": {
+        "runtime": {
+          "FinSpotAPI.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FinSpotAPI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FinSpotAPI.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
