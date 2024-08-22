@@ -9,6 +9,7 @@ namespace FinSpotAPI.Web.Framework.Configuration
             IConfiguration configuration)
         {
             services.Configure<AuthenticationOptions>(configuration.GetSection(AuthenticationOptions.SectionPath));
+            services.Configure<DatabasesConnectionOptions>(configuration.GetSection(DatabasesConnectionOptions.SectionPath));
 
             return services;
         }

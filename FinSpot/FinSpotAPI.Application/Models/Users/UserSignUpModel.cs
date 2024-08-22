@@ -1,8 +1,8 @@
 ﻿using FinSpotAPI.Common.Enumerations;
 
-namespace FinSpotAPI.Domain.Models.User
+namespace FinSpotAPI.Application.Models.Users
 {
-    public class User
+    public class UserSignUpModel
     {
         public required string FirstName { get; set; }
 
@@ -10,7 +10,7 @@ namespace FinSpotAPI.Domain.Models.User
 
         public required string Email { get; set; }
 
-        public required string HashedPassword { get; set; }
+        public required string Password { get; set; }
 
         public string? MobileNumber { get; set; }
 

@@ -17,7 +17,7 @@ namespace FinSpotAPI.Web.Framework.Configuration.Swagger
                         new OpenApiSecurityScheme
                         {
                             In = ParameterLocation.Header,
-                            Description = "Enter the Bearer Authorization string as following: `Bearer Generated-JWT-Token`",
+                            Description = "Enter the Bearer Authorization string",
                             Name = HeaderNames.Authorization,
                             Type = SecuritySchemeType.Http,
                             Scheme = JwtBearerDefaults.AuthenticationScheme

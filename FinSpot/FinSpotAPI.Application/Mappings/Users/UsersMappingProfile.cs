@@ -1,14 +1,17 @@
 ﻿using AutoMapper;
-using ApplicationModels = FinSpotAPI.Application.Models.UserService;
-using WebModels = FinSpotAPI.Web.Models.V1.Users.Inbound;
+using ApplicationModels = FinSpotAPI.Application.Models.Users;
+using DomainModels = FinSpotAPI.Domain.Models.Users;
 
-namespace FinSpotAPI.Web.Mappings.V1.Users
+namespace FinSpotAPI.Application.Mappings.Users
 {
-    public class UserMappingProfile : Profile
+    public class UsersMappingProfile : Profile
     {
-        public UserMappingProfile()
+        public UsersMappingProfile()
         {
-            CreateMap<WebModels.UserSignUpModel, ApplicationModels.UserSignUpModel>()
+            CreateMap<ApplicationModels.UserSignUpModel, DomainModels.User>()
+                .ForMember(
+                    dest => dest.Id,
+                    opt => opt.MapFrom(src => default(int)))
                 .ForMember(
                     dest => dest.FirstName,
                     opt => opt.MapFrom(src => src.FirstName))
@@ -16,11 +19,8 @@ namespace FinSpotAPI.Web.Mappings.V1.Users
                     dest => dest.LastName,
                     opt => opt.MapFrom(src => src.LastName))
                 .ForMember(
-                    dest => dest.Email,
+                    dest => dest.HashedPassword,
                     opt => opt.MapFrom(src => src.Email))
-                .ForMember(
-                    dest => dest.Password,
-                    opt => opt.MapFrom(src => src.Password))
                 .ForMember(
                     dest => dest.MobileNumber,
                     opt => opt.MapFrom(src => src.MobileNumber))
@@ -32,7 +32,8 @@ namespace FinSpotAPI.Web.Mappings.V1.Users
                     opt => opt.MapFrom(src => src.Gender))
                 .ForMember(
                     dest => dest.GenderName,
-                    opt => opt.MapFrom(src => src.GenderName));
+                    opt => opt.MapFrom(src => src.GenderName))
+                .AfterMap<PasswordHashingAction>();
         }
     }
 }

@@ -35,15 +35,6 @@ namespace FinSpotAPI.Web.Framework.Middlewares
         {
             context.Response.ContentType = "application/json";
 
-            if (exception is BaseApplicationException)
-            {
-                var baseApplicationException = exception as BaseApplicationException;
-
-                await context.Response.WriteAsJsonAsync(CreateResponse(
-                    baseApplicationException!.Message,
-                    baseApplicationException!.Details));
-            }
-
             switch (exception)
             {
                 case ConflictException:
@@ -64,9 +55,18 @@ namespace FinSpotAPI.Web.Framework.Middlewares
                 default:
                     {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                        await context.Response.WriteAsJsonAsync(CreateResponse("Internal Server Error."));
+                        await context.Response.WriteAsJsonAsync(CreateResponse("Internal Server Error.", exception.Message));
                         break;
                     }
+            }
+
+            if (exception is BaseApplicationException)
+            {
+                var baseApplicationException = exception as BaseApplicationException;
+
+                await context.Response.WriteAsJsonAsync(CreateResponse(
+                    baseApplicationException!.Message,
+                    baseApplicationException!.Details));
             }
 
             return;

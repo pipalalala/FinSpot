@@ -4,12 +4,12 @@
     {
         public const string SectionPath = "Authentication";
 
-        public required string IssuerSecretName { get; set; }
+        public required string Issuer { get; set; }
 
-        public required string AudienceSecretName { get; set; }
+        public required string Audience { get; set; }
+
+        public required int TokenLifetimeMinutes { get; set; }
 
         public required string IssuerSigningKeySecretName { get; set; }
-
-        public required string TokenLifetimeSecretName { get; set; }
     }
 }

@@ -2,6 +2,49 @@
   {
     "ContainingType": "FinSpotAPI.Web.Controllers.V1.UsersController",
     "Method": "SignUpAsync",
+    "RelativePath": "api/v1/Users/signIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "uerSignInModel",
+        "Type": "FinSpotAPI.Web.Models.V1.Users.Inbound.UserSignInModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinSpotAPI.Web.Controllers.V1.UsersController",
+    "Method": "SignUpAsync",
     "RelativePath": "api/v1/Users/signUp",
     "HttpMethod": "POST",
     "IsController": true,

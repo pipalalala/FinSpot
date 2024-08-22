@@ -11,21 +11,13 @@ namespace FinSpotAPI.Infrastructure.Services
             // TODO: add call to real secrets manager
             string? secretValue = Guid.NewGuid().ToString();
 
-            if (secretName == "Issuer")
-            {
-                secretValue = "Issuer";
-            }
-            if (secretName == "Audience")
-            {
-                secretValue = "Audience";
-            }
             if (secretName == "IssuerSigningKey")
             {
-                secretValue = "IssuerSigningKey";
+                secretValue = "IssuerSigningKeyIssuerSigningKeyIssuerSigningKeyIssuerSigningKey";
             }
-            if (secretName == "TokenLifetime")
+            if (secretName == "FinSpotPostgresConnectionString")
             {
-                secretValue = "10";
+                secretValue = "Server=localhost;Port=5432;User Id=FinSpot;Password=123456;Database=FinSpot;";
             }
 
             return Task.FromResult<string?>(secretValue);

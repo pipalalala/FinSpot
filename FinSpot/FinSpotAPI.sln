@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSpotAPI.Web", "FinSpotAPI.Web\FinSpotAPI.Web.csproj", "{8ACA2842-34CA-4FDF-B462-D5D0972AE287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinSpotAPI.Web", "FinSpotAPI.Web\FinSpotAPI.Web.csproj", "{8ACA2842-34CA-4FDF-B462-D5D0972AE287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSpotAPI.Application", "FinSpotAPI.Application\FinSpotAPI.Application.csproj", "{37143EA4-9C6C-44E2-A1BF-B006664F89D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinSpotAPI.Application", "FinSpotAPI.Application\FinSpotAPI.Application.csproj", "{37143EA4-9C6C-44E2-A1BF-B006664F89D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSpotAPI.Domain", "FinSpotAPI.Domain\FinSpotAPI.Domain.csproj", "{764446B1-BD8A-44CF-8743-7027E77F5BBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinSpotAPI.Domain", "FinSpotAPI.Domain\FinSpotAPI.Domain.csproj", "{764446B1-BD8A-44CF-8743-7027E77F5BBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSpotAPI.Infrastructure", "FinSpotAPI.Infrastructure\FinSpotAPI.Infrastructure.csproj", "{A9D07089-9019-4212-9B43-0BE948F97975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinSpotAPI.Infrastructure", "FinSpotAPI.Infrastructure\FinSpotAPI.Infrastructure.csproj", "{A9D07089-9019-4212-9B43-0BE948F97975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSpotAPI.Common", "FinSpotAPI.Common\FinSpotAPI.Common.csproj", "{2A454D35-3FDA-499E-9010-265F38361044}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinSpotAPI.Common", "FinSpotAPI.Common\FinSpotAPI.Common.csproj", "{2A454D35-3FDA-499E-9010-265F38361044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSpotAPI.Domain.Migrations", "FinSpotAPI.Domain.Migrations\FinSpotAPI.Domain.Migrations.csproj", "{10D8C726-5710-4ADE-8813-A60B6443B06B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2A454D35-3FDA-499E-9010-265F38361044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A454D35-3FDA-499E-9010-265F38361044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A454D35-3FDA-499E-9010-265F38361044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10D8C726-5710-4ADE-8813-A60B6443B06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10D8C726-5710-4ADE-8813-A60B6443B06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10D8C726-5710-4ADE-8813-A60B6443B06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10D8C726-5710-4ADE-8813-A60B6443B06B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

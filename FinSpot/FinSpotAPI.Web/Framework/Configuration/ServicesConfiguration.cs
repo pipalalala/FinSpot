@@ -9,11 +9,16 @@ namespace FinSpotAPI.Web.Framework.Configuration
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
         {
+            #region Infrastructure
             services.AddTransient<ISecretsManager, SecretsManager>();
 
             services.AddTransient<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<IJwtProvider, JwtProvider>();
+            #endregion Infrastructure
 
+            #region Application
             services.AddTransient<IUserService, UserService>();
+            #endregion Application
 
             return services;
         }

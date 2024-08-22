@@ -1,4 +1,4 @@
-﻿namespace FinSpotAPI.Application.Models.UserService
+﻿namespace FinSpotAPI.Application.Models.Users
 {
     public class UserSignInModel
     {
