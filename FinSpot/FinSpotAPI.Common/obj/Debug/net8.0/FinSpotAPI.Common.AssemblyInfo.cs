@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinSpotAPI.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6449c5c86549b696b0f75507462fe517570faf75")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e57b73466315aaa3c3375fcb789a5278e73582dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("FinSpotAPI.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinSpotAPI.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

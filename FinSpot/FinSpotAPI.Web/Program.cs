@@ -11,7 +11,8 @@ services
     .ConfigureOptions(configuration)
     .ConfigureMappings()
     .ConfigureServices()
-    .ConfigureRepositories();
+    .ConfigureRepositories()
+    .ConfigureDatabases(configuration);
 
 services
     .ConfigureApiVersioning()

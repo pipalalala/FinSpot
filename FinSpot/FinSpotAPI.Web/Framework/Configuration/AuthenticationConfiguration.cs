@@ -20,9 +20,10 @@ namespace FinSpotAPI.Web.Framework.Configuration
             ArgumentNullException.ThrowIfNull(secretsManager, nameof(secretsManager));
             ArgumentNullException.ThrowIfNull(authenticationOptions, nameof(authenticationOptions));
 
-            var validIssuer = secretsManager.GetSecretAsync(authenticationOptions.IssuerSecretName).GetAwaiter().GetResult();
-            var validAudience = secretsManager.GetSecretAsync(authenticationOptions.AudienceSecretName).GetAwaiter().GetResult();
-            var issuerSigningKey = secretsManager.GetSecretAsync(authenticationOptions.IssuerSigningKeySecretName).GetAwaiter().GetResult();
+            var issuerSigningKey = secretsManager
+                .GetSecretAsync(authenticationOptions.IssuerSigningKeySecretName)
+                .GetAwaiter()
+                .GetResult();
 
             services
                 .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -30,12 +31,14 @@ namespace FinSpotAPI.Web.Framework.Configuration
                 {
                     _.TokenValidationParameters = new TokenValidationParameters
                     {
+                        // set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
+                        ClockSkew = TimeSpan.Zero,
                         ValidateIssuer = true,
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = validIssuer,
-                        ValidAudience = validAudience,
+                        ValidIssuer = authenticationOptions.Issuer,
+                        ValidAudience = authenticationOptions.Audience,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(issuerSigningKey!))
                     };
                 });

@@ -23,3 +23,6 @@ C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\obj\Debug\net8.0\FinSpotAP
 C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\obj\Debug\net8.0\refint\FinSpotAPI.Infrastructure.dll
 C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\obj\Debug\net8.0\FinSpotAPI.Infrastructure.pdb
 C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\obj\Debug\net8.0\ref\FinSpotAPI.Infrastructure.dll
+C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\bin\Debug\net8.0\FinSpotAPI.Common.dll
+C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\bin\Debug\net8.0\FinSpotAPI.Common.pdb
+C:\projects\FinSpot\FinSpot\FinSpotAPI.Infrastructure\obj\Debug\net8.0\FinSpotA.6FFBAA5B.Up2Date

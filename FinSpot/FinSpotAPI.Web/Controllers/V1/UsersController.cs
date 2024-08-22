@@ -1,11 +1,12 @@
 using Asp.Versioning;
 using AutoMapper;
 using FinSpotAPI.Application.Services.Interfaces;
-using FinSpotAPI.Web.Models.V1.Users.Inbound;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 using ApplicationModels = FinSpotAPI.Application.Models;
+using Inbound = FinSpotAPI.Web.Models.V1.Users.Inbound;
+using Outbound = FinSpotAPI.Web.Models.V1.Users.Outbound;
 
 namespace FinSpotAPI.Web.Controllers.V1
 {
@@ -35,13 +36,26 @@ namespace FinSpotAPI.Web.Controllers.V1
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest, MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(string), StatusCodes.Status409Conflict, MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
-        public async Task<ActionResult> SignUpAsync(UserSignUpModel userSignUpModel)
+        public async Task<ActionResult> SignUpAsync(Inbound.UserSignUpModel userSignUpModel)
         {
-            var model = _mapper.Map<ApplicationModels.UserService.UserSignUpModel>(userSignUpModel);
+            var model = _mapper.Map<ApplicationModels.Users.UserSignUpModel>(userSignUpModel);
 
             await _userServcice.SignUpAsync(model);
 
             return Ok();
+        }
+
+        [AllowAnonymous]
+        [HttpPost("signIn")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
+        public async Task<ActionResult> SignUpAsync(Inbound.UserSignInModel uerSignInModel)
+        {
+            var result = await _userServcice.SignInAsync(uerSignInModel.Email, uerSignInModel.Password);
+
+            return Ok(_mapper.Map<Outbound.UserSignInModel>(result));
         }
     }
 }

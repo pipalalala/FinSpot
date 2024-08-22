@@ -4,8 +4,8 @@
     {
         public static IServiceCollection ConfigureMappings(this IServiceCollection services)
         {
-            services
-                .AddAutoMapper(typeof(Mappings.V1.Users.UserMappingProfile).Assembly);
+            services.AddAutoMapper(typeof(Mappings.V1.Users.UsersMappingProfile).Assembly);
+            services.AddAutoMapper(typeof(Application.Mappings.Users.UsersMappingProfile).Assembly);
 
             return services;
         }

@@ -1,4 +1,4 @@
-﻿using FinSpotAPI.Domain.Models.User;
+﻿using FinSpotAPI.Domain.Models.Users;
 
 namespace FinSpotAPI.Domain.Repositories.Interfaces
 {

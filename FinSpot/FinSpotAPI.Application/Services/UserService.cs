@@ -1,7 +1,8 @@
-﻿using FinSpotAPI.Application.Models.UserService;
+﻿using AutoMapper;
+using FinSpotAPI.Application.Models.Users;
 using FinSpotAPI.Application.Services.Interfaces;
 using FinSpotAPI.Common.Exceptions;
-using FinSpotAPI.Domain.Models.User;
+using FinSpotAPI.Domain.Models.Users;
 using FinSpotAPI.Domain.Repositories.Interfaces;
 using FinSpotAPI.Infrastructure.Services.Interfaces;
 
@@ -9,13 +10,19 @@ namespace FinSpotAPI.Application.Services
 {
     public class UserService : IUserService
     {
-        private readonly IPasswordHasher _passwordHasher;
+        private readonly IMapper _mapper;
+        private readonly IJwtProvider _jwtProvider;
         private readonly IUserRepository _userRepository;
+        private readonly IPasswordHasher _passwordHasher;
 
         public UserService(
+            IMapper mapper,
+            IJwtProvider jwtProvider,
             IUserRepository userRepository,
             IPasswordHasher passwordHasher)
         {
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _jwtProvider = jwtProvider ?? throw new ArgumentNullException(nameof(jwtProvider));
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
             _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
         }
@@ -31,17 +38,7 @@ namespace FinSpotAPI.Application.Services
                 throw new ConflictException($"User `{model.Email}` already exists.");
             }
 
-            var newUser = new User
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                HashedPassword = _passwordHasher.GenerateHashedPassword(model.Password),
-                MobileNumber = model.MobileNumber,
-                DateOfBirth = model.DateOfBirth,
-                Gender = model.Gender,
-                GenderName = model.GenderName,
-            };
+            var newUser = _mapper.Map<User>(model);
 
             await _userRepository.AddAsync(newUser);
         }
@@ -61,8 +58,9 @@ namespace FinSpotAPI.Application.Services
                 throw new AuthenticationException("Incorrect password.");
             }
 
-            // TODO: add generateToken()
-            return new UserSignInModel { AccessToken = "AccessToken" };
+            var accessToken = await _jwtProvider.GenerateTokenAsync();
+
+            return new UserSignInModel { AccessToken = accessToken };
         }
     }
 }
