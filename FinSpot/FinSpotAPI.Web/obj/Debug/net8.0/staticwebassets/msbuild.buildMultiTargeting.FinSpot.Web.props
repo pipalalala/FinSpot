@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\FinSpot.Web.props" />
-</Project>
