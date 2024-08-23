@@ -4,7 +4,7 @@ using FinSpotAPI.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
-using ApplicationModels = FinSpotAPI.Application.Models;
+using ApplicationModels = FinSpotAPI.Application.Models.Users;
 using Inbound = FinSpotAPI.Web.Models.V1.Users.Inbound;
 using Outbound = FinSpotAPI.Web.Models.V1.Users.Outbound;
 
@@ -17,17 +17,14 @@ namespace FinSpotAPI.Web.Controllers.V1
     public class UsersController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private readonly IUserService _userServcice;
-        private readonly ILogger<UsersController> _logger;
+        private readonly IUsersService _usersService;
 
         public UsersController(
             IMapper mapper,
-            IUserService userServcice,
-            ILogger<UsersController> logger)
+            IUsersService usersService)
         {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _userServcice = userServcice ?? throw new ArgumentNullException(nameof(userServcice));
+            _usersService = usersService ?? throw new ArgumentNullException(nameof(usersService));
         }
 
         [AllowAnonymous]
@@ -38,22 +35,22 @@ namespace FinSpotAPI.Web.Controllers.V1
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
         public async Task<ActionResult> SignUpAsync(Inbound.UserSignUpModel userSignUpModel)
         {
-            var model = _mapper.Map<ApplicationModels.Users.UserSignUpModel>(userSignUpModel);
+            var model = _mapper.Map<ApplicationModels.UserSignUpModel>(userSignUpModel);
 
-            await _userServcice.SignUpAsync(model);
+            await _usersService.SignUpAsync(model);
 
             return Ok();
         }
 
         [AllowAnonymous]
         [HttpPost("signIn")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Outbound.UserSignInModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound, MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
-        public async Task<ActionResult> SignUpAsync(Inbound.UserSignInModel uerSignInModel)
+        public async Task<ActionResult<Outbound.UserSignInModel>> SignUpAsync(Inbound.UserSignInModel uerSignInModel)
         {
-            var result = await _userServcice.SignInAsync(uerSignInModel.Email, uerSignInModel.Password);
+            var result = await _usersService.SignInAsync(uerSignInModel.Email, uerSignInModel.Password);
 
             return Ok(_mapper.Map<Outbound.UserSignInModel>(result));
         }

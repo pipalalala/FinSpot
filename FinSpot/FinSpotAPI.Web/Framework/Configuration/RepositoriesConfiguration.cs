@@ -7,7 +7,8 @@ namespace FinSpotAPI.Web.Framework.Configuration
     {
         public static IServiceCollection ConfigureRepositories(this IServiceCollection services)
         {
-            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUsersRepository, UsersRepository>();
+            services.AddTransient<IOperationsRepository, OperationsRepository>();
 
             return services;
         }

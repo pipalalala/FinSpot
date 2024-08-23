@@ -10,6 +10,8 @@
             public const int PasswordMaxLength = 50;
             public const int MobileNumberMaxLength = 30;
             public const int GenderNameMaxLength = 100;
+            public const int Title = 50;
+            public const int Details = 200;
             public static DateTime DateOfBirthMinValue => new(1990, 1, 1);
         }
 

@@ -16,7 +16,7 @@ namespace FinSpotAPI.Domain.EntityConfiguration.Users
 
             builder
                 .Property(p => p.Id)
-                .HasColumnName("id");
+                .IsRequired();
 
             builder
                 .Property(p => p.FirstName)
@@ -53,7 +53,15 @@ namespace FinSpotAPI.Domain.EntityConfiguration.Users
 
 
             builder
-                .HasIndex(e => e.Email);
+                .HasMany(_ => _.Operations)
+                .WithOne(_ => _.User)
+                .HasForeignKey(_ => _.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+            builder
+                .HasIndex(e => e.Email)
+                .IsUnique();
         }
     }
 }

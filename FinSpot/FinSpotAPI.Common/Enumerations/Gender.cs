@@ -1,4 +1,6 @@
-﻿namespace FinSpotAPI.Common.Enumerations
+﻿using System.ComponentModel;
+
+namespace FinSpotAPI.Common.Enumerations
 {
     public enum Gender
     {

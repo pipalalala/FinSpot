@@ -17,7 +17,8 @@ namespace FinSpotAPI.Web.Framework.Configuration
             #endregion Infrastructure
 
             #region Application
-            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IOperationsService, OperationsService>();
             #endregion Application
 
             return services;
