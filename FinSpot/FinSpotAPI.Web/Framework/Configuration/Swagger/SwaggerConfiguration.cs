@@ -11,6 +11,7 @@ namespace FinSpotAPI.Web.Framework.Configuration.Swagger
             services
                 .AddSwaggerGen(_ =>
                 {
+                    _.CustomSchemaIds(_ => _.ToString());
                     _.OperationFilter<DeprecatedFilter>();
                     _.AddSecurityDefinition(
                         JwtBearerDefaults.AuthenticationScheme,

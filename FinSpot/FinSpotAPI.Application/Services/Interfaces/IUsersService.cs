@@ -2,7 +2,7 @@
 
 namespace FinSpotAPI.Application.Services.Interfaces
 {
-    public interface IUserService
+    public interface IUsersService
     {
         Task SignUpAsync(UserSignUpModel model);
 

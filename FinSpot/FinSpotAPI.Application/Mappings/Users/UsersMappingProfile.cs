@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FinSpotAPI.Common.Enumerations;
+using FinSpotAPI.Common.Helpers;
 using ApplicationModels = FinSpotAPI.Application.Models.Users;
 using DomainModels = FinSpotAPI.Domain.Models.Users;
 
@@ -32,7 +34,10 @@ namespace FinSpotAPI.Application.Mappings.Users
                     opt => opt.MapFrom(src => src.Gender))
                 .ForMember(
                     dest => dest.GenderName,
-                    opt => opt.MapFrom(src => src.GenderName))
+                    opt => opt.MapFrom(src =>
+                        src.Gender == Gender.Custom
+                            ? src.GenderName
+                            : src.Gender.GetDescription()))
                 .AfterMap<PasswordHashingAction>();
         }
     }

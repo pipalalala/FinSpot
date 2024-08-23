@@ -8,22 +8,22 @@ using FinSpotAPI.Infrastructure.Services.Interfaces;
 
 namespace FinSpotAPI.Application.Services
 {
-    public class UserService : IUserService
+    public class UsersService : IUsersService
     {
         private readonly IMapper _mapper;
         private readonly IJwtProvider _jwtProvider;
-        private readonly IUserRepository _userRepository;
+        private readonly IUsersRepository _usersRepository;
         private readonly IPasswordHasher _passwordHasher;
 
-        public UserService(
+        public UsersService(
             IMapper mapper,
             IJwtProvider jwtProvider,
-            IUserRepository userRepository,
+            IUsersRepository usersRepository,
             IPasswordHasher passwordHasher)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _jwtProvider = jwtProvider ?? throw new ArgumentNullException(nameof(jwtProvider));
-            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _usersRepository = usersRepository ?? throw new ArgumentNullException(nameof(usersRepository));
             _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
         }
 
@@ -31,7 +31,7 @@ namespace FinSpotAPI.Application.Services
         {
             ArgumentNullException.ThrowIfNull(model, nameof(model));
 
-            var user = await _userRepository.GetByEmailAsync(model.Email);
+            var user = await _usersRepository.GetByEmailAsync(model.Email);
 
             if (user != null)
             {
@@ -40,7 +40,7 @@ namespace FinSpotAPI.Application.Services
 
             var newUser = _mapper.Map<User>(model);
 
-            await _userRepository.AddAsync(newUser);
+            await _usersRepository.AddAsync(newUser);
         }
 
         public async Task<UserSignInModel> SignInAsync(string email, string password)
@@ -48,7 +48,7 @@ namespace FinSpotAPI.Application.Services
             ArgumentNullException.ThrowIfNull(email, nameof(email));
             ArgumentNullException.ThrowIfNull(password, nameof(password));
 
-            var user = await _userRepository.GetByEmailAsync(email)
+            var user = await _usersRepository.GetByEmailAsync(email)
                 ?? throw new NotFoundException($"User `{email}` does not exist.");
 
             var verificationResult = _passwordHasher.VerifyPassword(password, user.HashedPassword);

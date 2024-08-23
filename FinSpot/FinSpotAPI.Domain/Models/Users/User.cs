@@ -1,4 +1,5 @@
 ﻿using FinSpotAPI.Common.Enumerations;
+using FinSpotAPI.Domain.Models.Operations;
 
 namespace FinSpotAPI.Domain.Models.Users
 {
@@ -21,5 +22,7 @@ namespace FinSpotAPI.Domain.Models.Users
         public required Gender Gender { get; set; }
 
         public string? GenderName { get; set; }
+
+        public ICollection<Operation> Operations { get; set; } = [];
     }
 }
