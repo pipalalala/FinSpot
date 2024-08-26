@@ -7,5 +7,7 @@ namespace FinSpotAPI.Application.Services.Interfaces
         Task SignUpAsync(UserSignUpModel model);
 
         Task<UserSignInModel> SignInAsync(string email, string password);
+
+        Task DeleteAccountAsync();
     }
 }

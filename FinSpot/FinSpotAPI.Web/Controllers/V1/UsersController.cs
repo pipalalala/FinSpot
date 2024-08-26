@@ -54,5 +54,16 @@ namespace FinSpotAPI.Web.Controllers.V1
 
             return Ok(_mapper.Map<Outbound.UserSignInModel>(result));
         }
+
+        [HttpDelete("deleteAccount")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
+        public async Task<ActionResult> DeleteAccountAsync()
+        {
+            await _usersService.DeleteAccountAsync();
+
+            return Ok();
+        }
     }
 }

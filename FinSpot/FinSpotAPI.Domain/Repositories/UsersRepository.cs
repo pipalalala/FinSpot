@@ -1,4 +1,5 @@
-﻿using FinSpotAPI.Domain.Models.Users;
+﻿using FinSpotAPI.Common.Exceptions;
+using FinSpotAPI.Domain.Models.Users;
 using FinSpotAPI.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,6 +43,16 @@ namespace FinSpotAPI.Domain.Repositories
             return _context.Users
                 .AsNoTracking()
                 .AnyAsync(_ => _.Id == id);
+        }
+
+        public async Task DeleteByIdAsync(int id)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(_ => _.Id == id)
+                ?? throw new NotFoundException($"User with Id `{id}` does not exist.");
+
+            _context.Users.Remove(user);
+
+            await _context.SaveChangesAsync();
         }
     }
 }

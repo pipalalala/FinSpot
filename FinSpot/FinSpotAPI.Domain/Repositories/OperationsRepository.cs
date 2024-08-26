@@ -1,5 +1,6 @@
 ﻿using FinSpotAPI.Domain.Models.Operations;
 using FinSpotAPI.Domain.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinSpotAPI.Domain.Repositories
 {
@@ -20,6 +21,13 @@ namespace FinSpotAPI.Domain.Repositories
             await _context.SaveChangesAsync();
 
             return operation;
+        }
+
+        public async Task<IEnumerable<Operation>> GetByUserIdAsync(int userId)
+        {
+            return await _context.Operations
+                .Where(_ => _.UserId == userId)
+                .ToListAsync();
         }
     }
 }

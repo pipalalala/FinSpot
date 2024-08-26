@@ -28,7 +28,7 @@ namespace FinSpotAPI.Web.Controllers.V1
                 ?? throw new ArgumentNullException(nameof(operationsService));
         }
 
-        [HttpPost("addOperation")]
+        [HttpPost("add")]
         [ProducesResponseType(typeof(Outbound.OperationModel), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest, MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
@@ -41,6 +41,18 @@ namespace FinSpotAPI.Web.Controllers.V1
             var result = await _operationsService.AddAsync(model);
 
             return Ok(_mapper.Map<Outbound.OperationModel>(result));
+        }
+
+        [HttpGet("getAll")]
+        [ProducesResponseType(typeof(IEnumerable<Outbound.OperationModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
+        public async Task<ActionResult<IEnumerable<Outbound.OperationModel>>> GetAllUserOperationsAsync()
+        {
+            var result = await _operationsService.GetByUserIdAsync();
+
+            return Ok(_mapper.Map<IEnumerable<Outbound.OperationModel>>(result));
         }
     }
 }

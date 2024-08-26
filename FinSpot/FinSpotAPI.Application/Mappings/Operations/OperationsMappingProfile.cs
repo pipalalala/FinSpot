@@ -37,7 +37,7 @@ namespace FinSpotAPI.Application.Mappings.Operations
             CreateMap<DomainModels.Operation, ApplicationModels.OperationModel>()
                 .ForMember(
                     dest => dest.Id,
-                    opt => opt.MapFrom(src => default(int)))
+                    opt => opt.MapFrom(src => src.Id))
                 .ForMember(
                     dest => dest.UserId,
                     opt => opt.MapFrom(src => src.UserId))

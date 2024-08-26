@@ -11,5 +11,7 @@ namespace FinSpotAPI.Domain.Repositories.Interfaces
         Task<User?> GetByIdAsync(int id);
 
         Task<bool> ExistsByIdAsync(int id);
+
+        Task DeleteByIdAsync(int id);
     }
 }
