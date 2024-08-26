@@ -58,7 +58,7 @@ namespace FinSpotAPI.Application.Services
                 throw new AuthenticationException("Incorrect password.");
             }
 
-            var accessToken = await _jwtProvider.GenerateTokenAsync();
+            var accessToken = await _jwtProvider.GenerateTokenAsync(user.Id);
 
             return new UserSignInModel { AccessToken = accessToken };
         }

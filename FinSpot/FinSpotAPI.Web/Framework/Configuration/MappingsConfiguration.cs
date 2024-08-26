@@ -6,6 +6,7 @@
         {
             services.AddAutoMapper(typeof(Mappings.V1.Users.UsersMappingProfile).Assembly);
             services.AddAutoMapper(typeof(Application.Mappings.Users.UsersMappingProfile).Assembly);
+            services.AddAutoMapper(typeof(Infrastructure.Mappings.CurrentUserMappingProfile).Assembly);
 
             return services;
         }

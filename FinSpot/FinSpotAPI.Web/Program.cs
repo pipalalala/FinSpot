@@ -18,7 +18,8 @@ services
     .ConfigureApiVersioning()
     .AddEndpointsApiExplorer()
     .ConfigureSwagger()
-    .ConfigureValidation();
+    .ConfigureValidation()
+    .AddHttpContextAccessor();
 
 services
     .ConfigureAuthentication(configuration)

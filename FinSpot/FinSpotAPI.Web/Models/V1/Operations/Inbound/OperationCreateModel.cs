@@ -4,8 +4,6 @@ namespace FinSpotAPI.Web.Models.V1.Operations.Inbound
 {
     public class OperationCreateModel
     {
-        public required int UserId { get; set; }
-
         public required string Name { get; set; }
 
         public required DateTime DateTime { get; set; }

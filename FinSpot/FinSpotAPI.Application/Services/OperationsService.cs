@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using FinSpotAPI.Application.Models.Operations;
 using FinSpotAPI.Application.Services.Interfaces;
-using FinSpotAPI.Common.Exceptions;
 using FinSpotAPI.Domain.Models.Operations;
 using FinSpotAPI.Domain.Repositories.Interfaces;
+using FinSpotAPI.Infrastructure.Services.Interfaces;
 
 namespace FinSpotAPI.Application.Services
 {
@@ -11,15 +11,19 @@ namespace FinSpotAPI.Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IUsersRepository _usersRepository;
+        private readonly ICurrentUserProvider _currentUserProvider;
         private readonly IOperationsRepository _operationsRepository;
 
         public OperationsService(
             IMapper mapper,
             IUsersRepository usersRepository,
+            ICurrentUserProvider currentUserProvider,
             IOperationsRepository operationsRepository)
         {
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _usersRepository = usersRepository ?? throw new ArgumentNullException(nameof(usersRepository));
+            _currentUserProvider = currentUserProvider
+                ?? throw new ArgumentNullException(nameof(currentUserProvider));
             _operationsRepository = operationsRepository
                 ?? throw new ArgumentNullException(nameof(operationsRepository));
         }
@@ -28,12 +32,10 @@ namespace FinSpotAPI.Application.Services
         {
             ArgumentNullException.ThrowIfNull(operationCreateModel, nameof(operationCreateModel));
 
-            if (!await _usersRepository.ExistsByIdAsync(operationCreateModel.UserId))
-            {
-                throw new NotFoundException($"User with ID `{operationCreateModel.UserId}` does not exist.");
-            }
+            var currentUserId = await _currentUserProvider.GetCurrentUserIdAsync();
 
             var newOperation = _mapper.Map<Operation>(operationCreateModel);
+            newOperation.UserId = currentUserId;
 
             var result = await _operationsRepository.AddAsync(newOperation);
 

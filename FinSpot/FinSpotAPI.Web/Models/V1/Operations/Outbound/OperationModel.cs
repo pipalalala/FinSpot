@@ -6,8 +6,6 @@ namespace FinSpotAPI.Web.Models.V1.Operations.Outbound
     {
         public required int Id { get; set; }
 
-        public required int UserId { get; set; }
-
         public required string Name { get; set; }
 
         public required DateTime DateTime { get; set; }

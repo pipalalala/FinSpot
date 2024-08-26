@@ -10,9 +10,6 @@ namespace FinSpotAPI.Web.Mappings.V1.Operations
         {
             CreateMap<WebModels.Inbound.OperationCreateModel, ApplicationModels.OperationCreateModel>()
                 .ForMember(
-                    dest => dest.UserId,
-                    opt => opt.MapFrom(src => src.UserId))
-                .ForMember(
                     dest => dest.Name,
                     opt => opt.MapFrom(src => src.Name))
                 .ForMember(
@@ -38,9 +35,6 @@ namespace FinSpotAPI.Web.Mappings.V1.Operations
                 .ForMember(
                     dest => dest.Id,
                     opt => opt.MapFrom(src => src.Id))
-                .ForMember(
-                    dest => dest.UserId,
-                    opt => opt.MapFrom(src => src.UserId))
                 .ForMember(
                     dest => dest.Name,
                     opt => opt.MapFrom(src => src.Name))

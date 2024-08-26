@@ -8,9 +8,6 @@ namespace FinSpotAPI.Web.Validation.V1.Operations
     {
         public OperationCreateModelValidator()
         {
-            RuleFor(_ => _.UserId)
-                .GreaterThan(0);
-
             RuleFor(_ => _.Name)
                 .NotEmpty()
                 .NotNull()

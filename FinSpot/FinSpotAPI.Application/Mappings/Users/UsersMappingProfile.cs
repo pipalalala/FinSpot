@@ -21,7 +21,7 @@ namespace FinSpotAPI.Application.Mappings.Users
                     dest => dest.LastName,
                     opt => opt.MapFrom(src => src.LastName))
                 .ForMember(
-                    dest => dest.HashedPassword,
+                    dest => dest.Email,
                     opt => opt.MapFrom(src => src.Email))
                 .ForMember(
                     dest => dest.MobileNumber,

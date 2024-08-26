@@ -37,6 +37,12 @@ namespace FinSpotAPI.Web.Framework.Middlewares
 
             switch (exception)
             {
+                case Microsoft.EntityFrameworkCore.DbUpdateException:
+                    {
+                        context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                        await context.Response.WriteAsJsonAsync(CreateResponse("Entity does not exist.", exception.Message));
+                        break;
+                    }
                 case ConflictException:
                     {
                         context.Response.StatusCode = (int)HttpStatusCode.Conflict;

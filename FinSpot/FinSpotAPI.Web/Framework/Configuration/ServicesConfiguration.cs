@@ -12,8 +12,9 @@ namespace FinSpotAPI.Web.Framework.Configuration
             #region Infrastructure
             services.AddTransient<ISecretsManager, SecretsManager>();
 
-            services.AddTransient<IPasswordHasher, PasswordHasher>();
             services.AddTransient<IJwtProvider, JwtProvider>();
+            services.AddTransient<IPasswordHasher, PasswordHasher>();
+            services.AddTransient<ICurrentUserProvider, CurrentUserProvider>();
             #endregion Infrastructure
 
             #region Application

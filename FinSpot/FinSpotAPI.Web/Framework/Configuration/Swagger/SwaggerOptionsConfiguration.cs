@@ -37,7 +37,7 @@ namespace FinSpotAPI.Web.Framework.Configuration.Swagger
                 Version = description.ApiVersion.ToString(),
                 Contact = new OpenApiContact
                 {
-                    Email = "raman.zinevich@innowise.com",
+                    Email = "raman.zinevich.111@gmail.com",
                     Name = "FinSpot"
                 },
                 Description = "FinSpot API provides information about user finance operations."
