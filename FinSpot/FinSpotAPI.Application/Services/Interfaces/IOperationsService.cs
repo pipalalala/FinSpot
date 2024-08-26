@@ -7,5 +7,9 @@ namespace FinSpotAPI.Application.Services.Interfaces
         Task<OperationModel> AddAsync(OperationCreateModel operationCreateModel);
 
         Task<IEnumerable<OperationModel>> GetByUserIdAsync();
+
+        Task<OperationModel> UpdateAsync(OperationUpdateModel operationUpdateModel);
+
+        Task DeleteAsync(int id);
     }
 }

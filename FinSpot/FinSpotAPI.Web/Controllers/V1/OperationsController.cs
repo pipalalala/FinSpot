@@ -54,5 +54,31 @@ namespace FinSpotAPI.Web.Controllers.V1
 
             return Ok(_mapper.Map<IEnumerable<Outbound.OperationModel>>(result));
         }
+
+        [HttpPut("update")]
+        [ProducesResponseType(typeof(Outbound.OperationModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
+        public async Task<ActionResult<Outbound.OperationModel>> UpdateAsync(Inbound.OperationUpdateModel operationUpdateModel)
+        {
+            var model = _mapper.Map<ApplicationModels.OperationUpdateModel>(operationUpdateModel);
+
+            var result = await _operationsService.UpdateAsync(model);
+
+            return Ok(_mapper.Map<Outbound.OperationModel>(result));
+        }
+
+        [HttpDelete("delete")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
+        public async Task<ActionResult> DeleteAsync(int id)
+        {
+            await _operationsService.DeleteAsync(id);
+
+            return Ok();
+        }
     }
 }

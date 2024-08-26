@@ -75,5 +75,15 @@ namespace FinSpotAPI.Application.Services
 
             await _usersRepository.DeleteByIdAsync(currentUserId);
         }
+
+        public async Task<UserModel> GetUserInfoAsync()
+        {
+            var currentUserId = await _currentUserProvider.GetCurrentUserIdAsync();
+
+            var user = await _usersRepository.GetByIdAsync(currentUserId)
+                ?? throw new NotFoundException($"User with Id `{currentUserId}` does not exist.");
+
+            return _mapper.Map<UserModel>(user);
+        }
     }
 }

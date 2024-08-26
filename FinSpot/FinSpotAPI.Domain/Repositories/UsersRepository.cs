@@ -48,7 +48,7 @@ namespace FinSpotAPI.Domain.Repositories
         public async Task DeleteByIdAsync(int id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(_ => _.Id == id)
-                ?? throw new NotFoundException($"User with Id `{id}` does not exist.");
+                ?? throw new NotFoundException($"User with ID `{id}` does not exist.");
 
             _context.Users.Remove(user);
 

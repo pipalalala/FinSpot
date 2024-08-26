@@ -65,5 +65,17 @@ namespace FinSpotAPI.Web.Controllers.V1
 
             return Ok();
         }
+
+        [HttpGet("getUserInfo")]
+        [ProducesResponseType(typeof(Outbound.UserSignInModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status401Unauthorized, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound, MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError, MediaTypeNames.Application.Json)]
+        public async Task<ActionResult<Outbound.UserModel>> GetUserInfoAsync()
+        {
+            var result = await _usersService.GetUserInfoAsync();
+
+            return Ok(_mapper.Map<Outbound.UserModel>(result));
+        }
     }
 }

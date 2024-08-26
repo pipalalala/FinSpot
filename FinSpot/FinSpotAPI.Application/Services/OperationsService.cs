@@ -50,5 +50,22 @@ namespace FinSpotAPI.Application.Services
 
             return _mapper.Map<IEnumerable<OperationModel>>(operations);
         }
+
+        public async Task<OperationModel> UpdateAsync(OperationUpdateModel operationUpdateModel)
+        {
+            var currentUserId = await _currentUserProvider.GetCurrentUserIdAsync();
+
+            var operation = _mapper.Map<Operation>(operationUpdateModel);
+            var result = await _operationsRepository.UpdateAsync(currentUserId, operation);
+
+            return _mapper.Map<OperationModel>(result);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var currentUserId = await _currentUserProvider.GetCurrentUserIdAsync();
+
+            await _operationsRepository.DeleteAsync(currentUserId, id);
+        }
     }
 }
