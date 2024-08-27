@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+
+  finspot-api:
+    container_name: finspot-api
+    build:
+      context: ./FinSpotAPI
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5000
+      - ASPNETCORE_HTTPS_PORTS=5001
+    ports:
+      - "5100:5100"
+      - "5101:5101"
+    networks:
+      - finspot-network
+    depends_on:
+      finspot-api.database:
+        condition: service_started
+
+  finspot-api.database:
+    image: postgres:latest
+    container_name: finspot-api.database
+    environment:
+      - POSTGRES_DB=FinSpot
+      - POSTGRES_USER=FinSpot
+      - POSTGRES_PASSWORD=123456
+    ports:
+      - "5432:5432"
+    networks:
+      - finspot-network
+  #rabbitmq:
+  #  image: rabbitmq:management
+  #  container_name: rabbitmq-container
+  #  environment:
+  #    - RABBITMQ_DEFAULT_USER=guest
+  #    - RABBITMQ_DEFAULT_PASS=guest
+  #  ports:
+  #    - "5672:5672"
+  #    - "15672:15672"
+  #  networks:
+  #    - meteorites-network
+
+networks:
+  finspot-network:
+    driver: bridge

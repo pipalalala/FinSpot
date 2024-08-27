@@ -32,5 +32,13 @@ namespace FinSpotAPI.Web.Framework.Configuration
 
             return services;
         }
+
+        public static void ApplyMigrations(this IApplicationBuilder app)
+        {
+            using var scope = app.ApplicationServices.CreateScope();
+            using var context = scope.ServiceProvider.GetRequiredService<FinSpotContext>();
+
+            context.Database.Migrate();
+        }
     }
 }

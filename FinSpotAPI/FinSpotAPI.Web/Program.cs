@@ -34,6 +34,11 @@ services
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    app.ApplyMigrations();
+}
+
 app.ConfigureSwaggerUI();
 
 app.UseHttpsRedirection();

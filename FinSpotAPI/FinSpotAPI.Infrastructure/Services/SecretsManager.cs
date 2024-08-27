@@ -17,7 +17,7 @@ namespace FinSpotAPI.Infrastructure.Services
             }
             if (secretName == "FinSpotPostgresConnectionString")
             {
-                secretValue = "Server=localhost;Port=5432;User Id=FinSpot;Password=123456;Database=FinSpot;";
+                secretValue = "Server=finspot-api.database;Port=5432;User Id=FinSpot;Password=123456;Database=FinSpot;";
             }
 
             return Task.FromResult<string?>(secretValue);
