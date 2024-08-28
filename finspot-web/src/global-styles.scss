@@ -1,0 +1,16 @@
+:root {
+  --primary-color: rgba(181, 141, 237, 1);
+  --secondary-color: #ffffff;
+  --optional-color: grey;
+
+  --primary-box-shadow: 0 4px 6px 0 rgba(181, 141, 237, 0.4);
+  --primary-box-shadow-lighter: 0 4px 6px 0 rgba(181, 141, 237, 0.8);
+  --secondary-box-shadow: 0 4px 6px 0 rgba(255, 255, 255, 0.4);
+  --secondary-box-shadow-lighter: 0 4px 6px 0 rgba(255, 255, 255, 0.8);
+  --optional-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2),
+    0 0 20px 0 rgba(0, 0, 0, 0.19);
+
+  --transition-duration: 0.3s;
+
+  font-family: "Segoe UI";
+}

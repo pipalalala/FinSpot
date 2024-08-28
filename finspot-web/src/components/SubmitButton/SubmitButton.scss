@@ -1,0 +1,19 @@
+.submit-button {
+  height: 30px;
+  padding: 0px 20px;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 14px;
+  color: var(--secondary-color);
+  box-shadow: var(--primary-box-shadow);
+  cursor: pointer;
+
+  transition-property: all;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-in-out;
+}
+
+.submit-button:hover {
+  box-shadow: var(--primary-box-shadow-lighter);
+}

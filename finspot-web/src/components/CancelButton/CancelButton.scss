@@ -1,0 +1,19 @@
+.cancel-button {
+  height: 30px;
+  padding: 0px 20px;
+  border-radius: 30px;
+  background-color: var(--secondary-color);
+  border: none;
+  font-size: 14px;
+  color: var(--primary-color);
+  box-shadow: var(--secondary-box-shadow);
+  cursor: pointer;
+
+  transition-property: all;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-in-out;
+}
+
+.cancel-button:hover {
+  box-shadow: var(--secondary-box-shadow-lighter);
+}
