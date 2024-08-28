@@ -10,7 +10,10 @@ export function Layout() {
       <div className="content__container">
         <Outlet></Outlet>
       </div>
-      <Footer />
+      <div className="spacer"></div>
+      <div className="footer__container">
+        <Footer />
+      </div>
     </>
   );
 }
